@@ -206,30 +206,34 @@ def viewlists():
 
 tlists= dict()
 aclist= None
-print("to-do list app")
-while True:
-    inp=menue()
-    if aclist==None and not inp in (1,2,6,8):
-        print ("no active list detected. create a list or import one first so you can do actions on it.")
-        input("press ENTER to continue")
-        continue
-    if inp==1:
-        createlist()
-    if inp==2:
-        importfromcsv()
-    if inp==3:
-        addtolist()
-    if inp==4:
-        removefromlist()
-    if inp==5:
-        savetocsv()
-    if inp==6:
-        viewlists()
-    if inp==7:
-        tlists[aclist].sortbyprio()
-        print("sorted by priority successfully")
-        input("press ENTER to continue")
-    if inp==8:
-        input("bye! press ENTER for the window to close")
-        
-        break
+
+def main():
+    print("to-do list app")
+    while True:
+        inp=menue()
+        if aclist==None and not inp in (1,2,6,8):
+            print ("no active list detected. create a list or import one first so you can do actions on it.")
+            input("press ENTER to continue")
+            continue
+        if inp==1:
+            createlist()
+        if inp==2:
+            importfromcsv()
+        if inp==3:
+            addtolist()
+        if inp==4:
+            removefromlist()
+        if inp==5:
+            savetocsv()
+        if inp==6:
+            viewlists()
+        if inp==7:
+            tlists[aclist].sortbyprio()
+            print("sorted by priority successfully")
+            input("press ENTER to continue")
+        if inp==8:
+            input("bye! press ENTER for the window to close")
+            break
+
+if __name__ == "__main__":
+    main()
